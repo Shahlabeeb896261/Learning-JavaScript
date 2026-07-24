@@ -48,3 +48,11 @@ function arrFun(anyArray) {
 
 let newArr = arrFun(myArray);
 console.log(newArr);
+
+function printNum(num) {
+    for(let i=1; i<=num; i++) {
+        console.log(i);
+    }
+}
+
+printNum(10);
