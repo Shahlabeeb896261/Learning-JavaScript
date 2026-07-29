@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Learning JavaScript</h1>
+        <button>Stop</button>
+    </div>
+</body>
+<script>
+    let setMethod = setTimeout(() => {
+        let h1 = document.querySelector('h1');
+        h1.innerHTML = "Learning Asynchronous Programming";
+        console.log("Executed");
+    }, 2000);
+
+    let stopBtn = document.querySelector('button');
+    stopBtn.addEventListener('click', () => {
+        clearTimeout(setMethod);
+        console.log("STOPPED");
+    })
+</script>
+</html>
