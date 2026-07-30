@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Choose Your Random Color</h1>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+</body>
+<script>
+    const startBtn = document.querySelector('#start');
+    const stopBtn = document.querySelector('#stop');
+    const randomColor = () => {
+        let val1 = Math.ceil(Math.random() * 255);
+        let val2 = Math.ceil(Math.random() * 255);
+        let val3 = Math.ceil(Math.random() * 255);
+        return `rgb(${val1}, ${val2}, ${val3})`;
+    }
+
+    let startColor = null;
+    startBtn.addEventListener('click', () => {
+        if (!startColor) {
+            startColor = setInterval(() => {
+                document.body.style.backgroundColor = randomColor();
+            }, 1000);
+        }
+    })
+
+
+    stopBtn.addEventListener('click', () => {
+        clearInterval(startColor);
+        startColor = null;
+    })
+
+</script>
+
+</html>
